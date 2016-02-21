@@ -5,6 +5,7 @@ use rand::{ StdRng };
 mod builder;
 pub use self::builder::KeyPairBuilder;
 
+#[derive(Clone)]
 pub struct KeyPair {
     pub public_key: PublicKey,
     private_key: PrivateKey
@@ -23,6 +24,7 @@ impl KeyPair {
     }
 }
 
+#[derive(Clone)]
 pub struct PublicKey {
     pub bits: usize,
     pub n: Int,
@@ -49,6 +51,7 @@ impl PublicKey {
     }
 }
 
+#[derive(Clone)]
 struct PrivateKey {
     lambda: Int,
     denominator: Int
